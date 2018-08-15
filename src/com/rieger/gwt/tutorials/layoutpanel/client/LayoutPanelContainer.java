@@ -15,7 +15,8 @@ public class LayoutPanelContainer implements EntryPoint {
      * This is the entry point method.
      */
     public void onModuleLoad() {
-	Widget leftPanel = new HTML("Left Panel"), rightPanel = new HTML("Right Panel"), centerPanel = new HTML("Center Panel");
+	Widget leftPanel = new HTML("Left Panel"), rightPanel = new HTML("Right Panel"),
+		centerPanel = new HTML("<h1><center>Center Panel</center></h1>");
 	LayoutPanel p = new LayoutPanel();
 	// old form for setting css class name
 	leftPanel.getElement().setClassName("panelWithBorder");
