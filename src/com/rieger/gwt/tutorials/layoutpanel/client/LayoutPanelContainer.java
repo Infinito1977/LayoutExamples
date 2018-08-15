@@ -17,8 +17,7 @@ public class LayoutPanelContainer implements EntryPoint {
      * returns an error.
      */
     private static final String SERVER_ERROR = "An error occurred while "
-	    + "attempting to contact the server. Please check your network "
-	    + "connection and try again.";
+	    + "attempting to contact the server. Please check your network " + "connection and try again.";
 
     /**
      * Create a remote service proxy to talk to the server-side Greeting service.
@@ -29,8 +28,7 @@ public class LayoutPanelContainer implements EntryPoint {
      * This is the entry point method.
      */
     public void onModuleLoad() {
-	Widget child0 = new HTML("Left Panel"), child1 = new HTML("Right Panel"),
-		child2 = new HTML("Center Panel");
+	Widget child0 = new HTML("Left Panel"), child1 = new HTML("Right Panel"), child2 = new HTML("Center Panel");
 	LayoutPanel p = new LayoutPanel();
 	child0.getElement().setClassName("panelWithBorder");
 	child1.getElement().setClassName("panelWithBorder");
