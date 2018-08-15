@@ -32,7 +32,7 @@ public class LayoutPanelContainer implements EntryPoint {
 	LayoutPanel p = new LayoutPanel();
 	child0.getElement().setClassName("panelWithBorder");
 	child1.getElement().setClassName("panelWithBorder");
-	child2.getElement().setClassName("panelWithBorder");
+	child2.getElement().setId("centerPanel");
 	p.add(child0);
 	p.add(child1);
 	p.add(child2);
