@@ -42,8 +42,8 @@ public class LayoutPanelContainer implements EntryPoint {
      * This is the entry point method.
      */
     public void onModuleLoad() {
-	Widget child0 = new Label("Left Panel"), child1 = new Label("Right Panel"),
-		child2 = new Label("Center Panel");
+	Widget child0 = new HTML("Left Panel"), child1 = new HTML("Right Panel"),
+		child2 = new HTML("Center Panel");
 	LayoutPanel p = new LayoutPanel();
 	p.add(child0);
 	p.add(child1);
