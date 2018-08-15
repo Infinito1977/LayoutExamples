@@ -39,11 +39,12 @@ public class LayoutPanelContainer implements EntryPoint {
 	p.add(child1);
 	p.add(child2);
 
-	p.setWidgetLeftWidth(child0, 0, Unit.PCT, 50, Unit.PCT); // Left panel
-	p.setWidgetRightWidth(child1, 0, Unit.PCT, 50, Unit.PCT); // Right panel
+	p.setWidgetLeftWidth(child0, 0, Unit.PCT, 50, Unit.PCT); // Left panel 50% (PCT) from left
+	p.setWidgetRightWidth(child1, 0, Unit.PCT, 50, Unit.PCT); // Right panel 50% (PCT) from right
 
-	p.setWidgetLeftRight(child2, 5, Unit.EM, 5, Unit.EM); // Center panel
-	p.setWidgetTopBottom(child2, 5, Unit.EM, 5, Unit.EM);
+	// Center Panel
+	p.setWidgetLeftRight(child2, 5, Unit.EM, 5, Unit.EM); // 5em left and right border
+	p.setWidgetTopBottom(child2, 5, Unit.EM, 5, Unit.EM); // 5em top and bottom border
 
 	RootLayoutPanel.get().add(p);
     }
