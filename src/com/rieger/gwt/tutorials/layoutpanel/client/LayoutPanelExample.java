@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.Widget;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class LayoutPanelContainer implements EntryPoint {
+public class LayoutPanelExample implements EntryPoint {
     /**
      * This is the entry point method.
      */
