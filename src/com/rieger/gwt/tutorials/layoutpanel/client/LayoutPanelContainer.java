@@ -2,6 +2,7 @@ package com.rieger.gwt.tutorials.layoutpanel.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -36,7 +37,14 @@ public class LayoutPanelContainer implements EntryPoint {
 
 	// Center Panel
 	p.setWidgetLeftRight(centerPanel, 5, Unit.EM, 5, Unit.EM); // 5em left and right border
-	p.setWidgetTopBottom(centerPanel, 5, Unit.EM, 5, Unit.EM); // 5em top and bottom border
+	p.setWidgetTopBottom(centerPanel, 5, Unit.EM, 15, Unit.EM); // 5em top and bottom border
+
+	Anchor anchor = new Anchor("TutorialsPoint", false, "http://www.tutorialspoint.com", "_blank");
+	anchor.setStyleName("panelWithBorder");
+	anchor.addStyleName("gwt-center");
+	p.add(anchor);
+	p.setWidgetLeftRight(anchor, 5, Unit.EM, 5, Unit.EM);
+	p.setWidgetBottomHeight(anchor, 5, Unit.EM, 5, Unit.EM);
 
 	RootLayoutPanel.get().add(p);
     }
