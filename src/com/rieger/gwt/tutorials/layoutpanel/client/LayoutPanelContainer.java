@@ -16,7 +16,7 @@ public class LayoutPanelContainer implements EntryPoint {
      */
     public void onModuleLoad() {
 	Widget leftPanel = new HTML("Left Panel"), rightPanel = new HTML("Right Panel"),
-		centerPanel = new HTML("<h1><center>Center Panel</center></h1>");
+		centerPanel = new HTML("<h1>Center Panel</h1>");
 	LayoutPanel p = new LayoutPanel();
 	// old form for setting css class name
 	leftPanel.getElement().setClassName("panelWithBorder");
@@ -26,6 +26,7 @@ public class LayoutPanelContainer implements EntryPoint {
 	rightPanel.addStyleName("gwt-Red-Text");
 	// set css id
 	centerPanel.getElement().setId("centerPanel");
+	centerPanel.addStyleName("gwt-center");
 	p.add(leftPanel);
 	p.add(rightPanel);
 	p.add(centerPanel);
