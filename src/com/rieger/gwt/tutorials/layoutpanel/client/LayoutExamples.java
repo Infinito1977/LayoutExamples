@@ -8,6 +8,7 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
+import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -95,12 +96,22 @@ public class LayoutExamples implements EntryPoint {
 	return p;
     }
     
+    public StackLayoutPanel getStackLayoutPanel() {
+	StackLayoutPanel p = new StackLayoutPanel(Unit.EM);
+	p.add(new HTML("this content"), new HTML("this"), 4);
+	p.add(new HTML("that content"), new HTML("that"), 4);
+	p.add(new HTML("the other content"), new HTML("the other"), 4);
+	return p;
+    }
+    
     public void onModuleLoad() {
 	TabLayoutPanel p = new TabLayoutPanel(2.5, Unit.EM);
 	
 	p.add(getDockLayoutPanel(), "DockLayoutPanel");
 	p.add(getLayoutPanel(), "LayoutPanel");
 	p.add(getSplitLayoutPanel(), "SplitLayoutPanel");
+	p.add(getStackLayoutPanel(), "StackLayoutPanel");
+
 	RootLayoutPanel.get().add(p);
     }
 }
