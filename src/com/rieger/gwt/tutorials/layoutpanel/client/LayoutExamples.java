@@ -70,11 +70,11 @@ public class LayoutExamples implements EntryPoint {
     public SplitLayoutPanel getSplitLayoutPanel() {
 	SplitLayoutPanel p = new SplitLayoutPanel();
 	Widget header = new HTML("header");
-	header.addStyleName("gwt-round-border");
+	header.setStyleName("gwt-round-border");
 	Widget footer = new HTML("footer");
-	footer.addStyleName("gwt-round-border");
+	footer.setStyleName("gwt-round-border");
 	Widget navigation = new HTML("navigation");
-	navigation.addStyleName("gwt-round-border");
+	navigation.setStyleName("gwt-round-border");
 	Widget details = new HTML(
 		"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \r\n"
 			+ "\r\n"
