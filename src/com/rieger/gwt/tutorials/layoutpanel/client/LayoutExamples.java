@@ -105,6 +105,9 @@ public class LayoutExamples implements EntryPoint {
     }
     
     public void onModuleLoad() {
+	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
+	outer.addNorth(new HTML("<h1>TabLayoutPanel</h1>"), 4);
+	
 	TabLayoutPanel p = new TabLayoutPanel(2.5, Unit.EM);
 	
 	p.add(getDockLayoutPanel(), "DockLayoutPanel");
@@ -112,6 +115,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getSplitLayoutPanel(), "SplitLayoutPanel");
 	p.add(getStackLayoutPanel(), "StackLayoutPanel");
 
-	RootLayoutPanel.get().add(p);
+	outer.add(p);
+	RootLayoutPanel.get().add(outer);
     }
 }
