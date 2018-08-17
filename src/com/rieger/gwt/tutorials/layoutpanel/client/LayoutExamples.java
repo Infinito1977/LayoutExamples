@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomLayout;
 
 public class LayoutExamples implements EntryPoint {
     public DockLayoutPanel getDockLayoutPanel() {
@@ -69,11 +70,11 @@ public class LayoutExamples implements EntryPoint {
     public SplitLayoutPanel getSplitLayoutPanel() {
 	SplitLayoutPanel p = new SplitLayoutPanel();
 	Widget header = new HTML("header");
-	header.setStyleName("gwt-border");
+	header.addStyleName("gwt-border");
 	Widget footer = new HTML("footer");
-	footer.setStyleName("gwt-border");
+	footer.addStyleName("gwt-border");
 	Widget navigation = new HTML("navigation");
-	navigation.setStyleName("gwt-border");
+	navigation.addStyleName("gwt-border");
 	Widget details = new HTML(
 		"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \r\n"
 			+ "\r\n"
@@ -106,7 +107,8 @@ public class LayoutExamples implements EntryPoint {
     
     public void onModuleLoad() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
-	outer.addNorth(new HTML("<h1>TabLayoutPanel</h1>"), 4);
+	Widget north = new HTML("<h1>TabLayoutPanel</h1>");
+	outer.addNorth(north, 4);
 	
 	TabLayoutPanel p = new TabLayoutPanel(2.5, Unit.EM);
 	
@@ -116,6 +118,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getStackLayoutPanel(), "StackLayoutPanel");
 
 	outer.add(p);
+	CustomLayout.addGWTStyles(outer);
 	RootLayoutPanel.get().add(outer);
     }
 }

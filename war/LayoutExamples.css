@@ -15,3 +15,19 @@
 .gwt-center {
 	text-align: center;
 }
+
+.gwt-border-2px {
+	border-width: 2px !important;
+}
+
+.gwt-color {
+	color: green;
+}
+
+.gwt-background-color {
+	background-color: grey;
+}
+
+.gwt-font-size {
+	font-size: 1.2em;
+}
