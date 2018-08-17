@@ -70,11 +70,11 @@ public class LayoutExamples implements EntryPoint {
     public SplitLayoutPanel getSplitLayoutPanel() {
 	SplitLayoutPanel p = new SplitLayoutPanel();
 	Widget header = new HTML("header");
-	header.addStyleName("gwt-border");
+	header.addStyleName("gwt-round-border");
 	Widget footer = new HTML("footer");
-	footer.addStyleName("gwt-border");
+	footer.addStyleName("gwt-round-border");
 	Widget navigation = new HTML("navigation");
-	navigation.addStyleName("gwt-border");
+	navigation.addStyleName("gwt-round-border");
 	Widget details = new HTML(
 		"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \r\n"
 			+ "\r\n"
@@ -87,7 +87,7 @@ public class LayoutExamples implements EntryPoint {
 			+ "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   \r\n"
 			+ "\r\n"
 			+ "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur");
-	details.setStyleName("gwt-border");
+	details.setStyleName("gwt-round-border");
 
 	p.addNorth(header, 150);
 	p.addWest(navigation, 128);
