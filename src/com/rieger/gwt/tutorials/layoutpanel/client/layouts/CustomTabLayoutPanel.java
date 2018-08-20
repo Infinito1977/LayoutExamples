@@ -28,6 +28,7 @@ public class CustomTabLayoutPanel extends DockLayoutPanel {
 	p.add(new CustomFlexTable(), "FlexTable");
 	p.add(new CustomGrid(), "Grid inside DecoratorPanel");
 	p.add(new CustomDeckPanel(), "DeckPanel inside VerticalPanel");
+	p.add(new CustomFormPanel(), "FormPanel inside DecoratorPanel");
 	
 	p.selectTab(constants.selectedTab());
 
