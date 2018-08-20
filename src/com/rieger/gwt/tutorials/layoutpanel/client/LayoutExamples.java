@@ -2,7 +2,12 @@ package com.rieger.gwt.tutorials.layoutpanel.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.ComplexPanel;
+import com.google.gwt.user.client.ui.DeckPanel;
 import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -10,6 +15,7 @@ import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -178,6 +184,65 @@ public class LayoutExamples implements EntryPoint {
 	return decoratorPanel;
     }
 
+    public ComplexPanel getDeckPanel() {
+	// Create DeckPanel widget
+	final DeckPanel deckPanel = new DeckPanel();
+	deckPanel.setSize("300px", "120px");
+	deckPanel.setStyleName("deckpanel");
+
+	// Create lables to add to deckpanel
+	Label label1 = new Label("This is first Page");
+	Label label2 = new Label("This is second Page");
+	Label label3 = new Label("This is third Page");
+
+	// Add labels to deckpanel
+	deckPanel.add(label1);
+	deckPanel.add(label2);
+	deckPanel.add(label3);
+
+	// show first label
+	deckPanel.showWidget(0);
+
+	// create button bar
+	HorizontalPanel buttonBar = new HorizontalPanel();
+	buttonBar.setSpacing(5);
+
+	// create button and add click handlers
+	// show different labels on click of different buttons
+	Button button1 = new Button("Page 1");
+	button1.addClickHandler(new ClickHandler() {
+	    @Override
+	    public void onClick(ClickEvent event) {
+		deckPanel.showWidget(0);
+	    }
+	});
+
+	Button button2 = new Button("Page 2");
+	button2.addClickHandler(new ClickHandler() {
+	    @Override
+	    public void onClick(ClickEvent event) {
+		deckPanel.showWidget(1);
+	    }
+	});
+
+	Button button3 = new Button("Page 3");
+	button3.addClickHandler(new ClickHandler() {
+	    @Override
+	    public void onClick(ClickEvent event) {
+		deckPanel.showWidget(2);
+	    }
+	});
+
+	buttonBar.add(button1);
+	buttonBar.add(button2);
+	buttonBar.add(button3);
+
+	VerticalPanel vPanel = new VerticalPanel();
+	vPanel.add(deckPanel);
+	vPanel.add(buttonBar);
+	return vPanel;
+    }
+
     public void onModuleLoad() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
 	Widget north = new HTML("<h1>TabLayoutPanel</h1>");
@@ -194,6 +259,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getVerticalPanel(), "VerticalPanel");
 	p.add(new CustomFlexTable(), "FlexTable");
 	p.add(getGrid(), "Grid inside DecoratorPanel");
+	p.add(getDeckPanel(), "DeckPanel inside VerticalPanel");
 
 	outer.add(p);
 	CustomLayout.addGWTStyles(outer);
