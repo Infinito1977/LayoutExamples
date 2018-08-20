@@ -3,11 +3,15 @@ package com.rieger.gwt.tutorials.layoutpanel.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.LayoutPanel;
+import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.google.gwt.user.client.ui.StackLayoutPanel;
@@ -156,6 +160,24 @@ public class LayoutExamples implements EntryPoint {
 	return p;
     }
 
+    public Panel getGrid() {
+	// Create a grid
+	Grid grid = new Grid(2, 2);
+
+	// Add images to the grid
+	int numRows = grid.getRowCount();
+	int numColumns = grid.getColumnCount();
+	for (int row = 0; row < numRows; row++) {
+	    for (int col = 0; col < numColumns; col++) {
+		grid.setWidget(row, col, new Image("http://www.tutorialspoint.com/images/gwt-mini.png"));
+	    }
+	}
+
+	DecoratorPanel decoratorPanel = new DecoratorPanel();
+	decoratorPanel.add(grid);
+	return decoratorPanel;
+    }
+
     public void onModuleLoad() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
 	Widget north = new HTML("<h1>TabLayoutPanel</h1>");
@@ -171,6 +193,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getHorizontalPanel(), "HorizontalPanel");
 	p.add(getVerticalPanel(), "VerticalPanel");
 	p.add(new CustomFlexTable(), "FlexTable");
+	p.add(getGrid(), "Grid inside DecoratorPanel");
 
 	outer.add(p);
 	CustomLayout.addGWTStyles(outer);
