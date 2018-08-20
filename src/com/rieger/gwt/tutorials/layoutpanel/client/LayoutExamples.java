@@ -25,7 +25,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomDockLayoutPanel;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomFlexTable;
-import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomLayout;
+import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomCssFormatter;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomSplitLayoutPanel;
 
 public class LayoutExamples implements EntryPoint {
@@ -214,7 +214,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getDeckPanel(), "DeckPanel inside VerticalPanel");
 
 	outer.add(p);
-	CustomLayout.addGWTStyles(outer);
+	CustomCssFormatter.addGWTStyles(outer);
 	RootLayoutPanel.get().add(outer);
     }
 }
