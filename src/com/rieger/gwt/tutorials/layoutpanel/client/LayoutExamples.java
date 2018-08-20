@@ -12,6 +12,7 @@ import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomLayout;
 
@@ -139,6 +140,20 @@ public class LayoutExamples implements EntryPoint {
 	return p;
     }
     
+    public VerticalPanel getVerticalPanel() {
+	VerticalPanel p = new VerticalPanel();
+	for (int i = 0; i < 9; i++) {
+	    Widget w = new HTML("<h2>" + i + "</h2>");
+	    w.setStyleName("border border-primary rounded");
+	    p.add(w);
+	}
+	// Fügt vor 9. Element folgendes Element hinzu
+	Widget w_a = new HTML("<h2>a</h2>");
+	w_a.setStyleName("border border-primary rounded");
+	p.insert(w_a, 8);
+	return p;
+    }
+    
     public void onModuleLoad() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
 	Widget north = new HTML("<h1>TabLayoutPanel</h1>");
@@ -152,6 +167,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getStackLayoutPanel(), "StackLayoutPanel");
 	p.add(getFlowPanel(), "FlowPanel");
 	p.add(getHorizontalPanel(), "HorizontalPanel");
+	p.add(getVerticalPanel(), "VerticalPanel");
 
 	outer.add(p);
 	CustomLayout.addGWTStyles(outer);
