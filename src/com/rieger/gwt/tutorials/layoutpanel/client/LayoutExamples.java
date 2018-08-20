@@ -17,7 +17,6 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
-import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -26,16 +25,9 @@ import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomFlexTable;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomLayoutPanel;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomCssFormatter;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomSplitLayoutPanel;
+import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomStackLayoutPanel;
 
 public class LayoutExamples implements EntryPoint {
-    public StackLayoutPanel getStackLayoutPanel() {
-	StackLayoutPanel p = new StackLayoutPanel(Unit.EM);
-	p.add(new HTML("this content"), new HTML("this"), 4);
-	p.add(new HTML("that content"), new HTML("that"), 4);
-	p.add(new HTML("the other content"), new HTML("the other"), 4);
-	return p;
-    }
-
     public DockLayoutPanel getFlowPanel() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
 	Widget north = new HTML(
@@ -170,7 +162,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(new CustomDockLayoutPanel(Unit.EM), "DockLayoutPanel");
 	p.add(new CustomLayoutPanel(), "LayoutPanel");
 	p.add(new CustomSplitLayoutPanel(), "SplitLayoutPanel");
-	p.add(getStackLayoutPanel(), "StackLayoutPanel");
+	p.add(new CustomStackLayoutPanel(Unit.EM), "StackLayoutPanel");
 	p.add(getFlowPanel(), "FlowPanel");
 	p.add(getHorizontalPanel(), "HorizontalPanel");
 	p.add(getVerticalPanel(), "VerticalPanel");
