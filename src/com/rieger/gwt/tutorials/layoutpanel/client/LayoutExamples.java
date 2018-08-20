@@ -19,7 +19,6 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
-import com.google.gwt.user.client.ui.SplitLayoutPanel;
 import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -27,6 +26,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomDockLayoutPanel;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomFlexTable;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomLayout;
+import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomSplitLayoutPanel;
 
 public class LayoutExamples implements EntryPoint {
     public LayoutPanel getLayoutPanel() {
@@ -59,36 +59,6 @@ public class LayoutExamples implements EntryPoint {
 	p.add(anchor);
 	p.setWidgetLeftRight(anchor, 5, Unit.EM, 5, Unit.EM);
 	p.setWidgetBottomHeight(anchor, 5, Unit.EM, 5, Unit.EM);
-
-	return p;
-    }
-
-    public SplitLayoutPanel getSplitLayoutPanel() {
-	SplitLayoutPanel p = new SplitLayoutPanel();
-	Widget header = new HTML("header");
-	header.setStyleName("gwt-round-border");
-	Widget footer = new HTML("footer");
-	footer.setStyleName("gwt-round-border");
-	Widget navigation = new HTML("navigation");
-	navigation.setStyleName("gwt-round-border");
-	Widget details = new HTML(
-		"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   \r\n"
-			+ "\r\n"
-			+ "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   \r\n"
-			+ "\r\n"
-			+ "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   \r\n"
-			+ "\r\n"
-			+ "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   \r\n"
-			+ "\r\n"
-			+ "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   \r\n"
-			+ "\r\n"
-			+ "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur");
-	details.setStyleName("gwt-round-border");
-
-	p.addNorth(header, 150);
-	p.addWest(navigation, 128);
-	p.addSouth(footer, 150);
-	p.add(details);
 
 	return p;
     }
@@ -234,7 +204,7 @@ public class LayoutExamples implements EntryPoint {
 
 	p.add(new CustomDockLayoutPanel(Unit.EM), "DockLayoutPanel");
 	p.add(getLayoutPanel(), "LayoutPanel");
-	p.add(getSplitLayoutPanel(), "SplitLayoutPanel");
+	p.add(new CustomSplitLayoutPanel(), "SplitLayoutPanel");
 	p.add(getStackLayoutPanel(), "StackLayoutPanel");
 	p.add(getFlowPanel(), "FlowPanel");
 	p.add(getHorizontalPanel(), "HorizontalPanel");
