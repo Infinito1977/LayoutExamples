@@ -41,3 +41,8 @@
 	border-radius: 25px;
 	padding-left: 15px;
 }
+
+.gwt-width-10pc {
+	width: 10%;
+	float: left;
+}

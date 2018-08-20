@@ -4,6 +4,7 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -105,6 +106,19 @@ public class LayoutExamples implements EntryPoint {
 	return p;
     }
     
+    public FlowPanel getFlowPanel() {
+	FlowPanel p = new FlowPanel();
+	for (int i = 0; i < 9; i++) {
+	    Widget w = new HTML("<h1>" + i + "</h1>");
+	    w.setStyleName("border border-primary rounded gwt-width-10pc");
+	    p.add(w);
+	}
+	Widget w_a = new HTML("<h1>a</h1>");
+	w_a.setStyleName("border border-primary rounded gwt-width-10pc");
+	p.insert(w_a, 8);
+	return p;
+    }
+    
     public void onModuleLoad() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
 	Widget north = new HTML("<h1>TabLayoutPanel</h1>");
@@ -116,6 +130,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getLayoutPanel(), "LayoutPanel");
 	p.add(getSplitLayoutPanel(), "SplitLayoutPanel");
 	p.add(getStackLayoutPanel(), "StackLayoutPanel");
+	p.add(getFlowPanel(), "FlowPanel");
 
 	outer.add(p);
 	CustomLayout.addGWTStyles(outer);
