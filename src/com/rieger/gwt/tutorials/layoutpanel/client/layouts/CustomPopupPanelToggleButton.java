@@ -27,12 +27,10 @@ public class CustomPopupPanelToggleButton extends ToggleButton {
 	addClickHandler(new ClickHandler() {
 	    @Override
 	    public void onClick(ClickEvent event) {
-		if (isDown()) {
-		    int left = (int) ((Window.getClientWidth()) / 2.5);
-		    int top = (int) ((Window.getClientHeight()) / 2.5);
-		    popup.setPopupPosition(left, top);
-		    popup.show();
-		}
+		int left = (int) ((Window.getClientWidth()) / 2.5);
+		int top = (int) ((Window.getClientHeight()) / 2.5);
+		popup.setPopupPosition(left, top);
+		popup.show();
 	    }
 	});
     }
