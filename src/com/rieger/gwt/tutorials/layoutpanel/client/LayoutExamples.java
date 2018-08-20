@@ -14,6 +14,7 @@ import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomFlexTable;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomLayout;
 
 public class LayoutExamples implements EntryPoint {
@@ -35,7 +36,7 @@ public class LayoutExamples implements EntryPoint {
 
 	return p;
     }
-    
+
     public LayoutPanel getLayoutPanel() {
 	Widget leftPanel = new HTML("Left Panel"), rightPanel = new HTML("Right Panel"),
 		centerPanel = new HTML("<h1>Center Panel</h1>");
@@ -69,7 +70,7 @@ public class LayoutExamples implements EntryPoint {
 
 	return p;
     }
-    
+
     public SplitLayoutPanel getSplitLayoutPanel() {
 	SplitLayoutPanel p = new SplitLayoutPanel();
 	Widget header = new HTML("header");
@@ -99,7 +100,7 @@ public class LayoutExamples implements EntryPoint {
 
 	return p;
     }
-    
+
     public StackLayoutPanel getStackLayoutPanel() {
 	StackLayoutPanel p = new StackLayoutPanel(Unit.EM);
 	p.add(new HTML("this content"), new HTML("this"), 4);
@@ -107,10 +108,11 @@ public class LayoutExamples implements EntryPoint {
 	p.add(new HTML("the other content"), new HTML("the other"), 4);
 	return p;
     }
-    
+
     public DockLayoutPanel getFlowPanel() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
-	Widget north = new HTML("<h1>Elemente sind auf 10% Breite begrenzt, sonst füllen sie die komplette Spalte</h1>");
+	Widget north = new HTML(
+		"<h1>Elemente sind auf 10% Breite begrenzt, sonst füllen sie die komplette Spalte</h1>");
 	outer.addNorth(north, 4);
 	FlowPanel p = new FlowPanel();
 	for (int i = 0; i < 9; i++) {
@@ -125,7 +127,7 @@ public class LayoutExamples implements EntryPoint {
 	outer.add(p);
 	return outer;
     }
-    
+
     public HorizontalPanel getHorizontalPanel() {
 	HorizontalPanel p = new HorizontalPanel();
 	for (int i = 0; i < 9; i++) {
@@ -139,7 +141,7 @@ public class LayoutExamples implements EntryPoint {
 	p.insert(w_a, 8);
 	return p;
     }
-    
+
     public VerticalPanel getVerticalPanel() {
 	VerticalPanel p = new VerticalPanel();
 	for (int i = 0; i < 9; i++) {
@@ -153,14 +155,14 @@ public class LayoutExamples implements EntryPoint {
 	p.insert(w_a, 8);
 	return p;
     }
-    
+
     public void onModuleLoad() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
 	Widget north = new HTML("<h1>TabLayoutPanel</h1>");
 	outer.addNorth(north, 4);
-	
+
 	TabLayoutPanel p = new TabLayoutPanel(2.5, Unit.EM);
-	
+
 	p.add(getDockLayoutPanel(), "DockLayoutPanel");
 	p.add(getLayoutPanel(), "LayoutPanel");
 	p.add(getSplitLayoutPanel(), "SplitLayoutPanel");
@@ -168,6 +170,7 @@ public class LayoutExamples implements EntryPoint {
 	p.add(getFlowPanel(), "FlowPanel");
 	p.add(getHorizontalPanel(), "HorizontalPanel");
 	p.add(getVerticalPanel(), "VerticalPanel");
+	p.add(new CustomFlexTable(), "FlexTable");
 
 	outer.add(p);
 	CustomLayout.addGWTStyles(outer);
