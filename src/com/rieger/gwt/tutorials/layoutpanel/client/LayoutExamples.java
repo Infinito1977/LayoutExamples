@@ -107,17 +107,21 @@ public class LayoutExamples implements EntryPoint {
 	return p;
     }
     
-    public FlowPanel getFlowPanel() {
+    public DockLayoutPanel getFlowPanel() {
+	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
+	Widget north = new HTML("<h1>Elemente sind auf 10% Breite begrenzt, sonst füllen sie die komplette Spalte</h1>");
+	outer.addNorth(north, 4);
 	FlowPanel p = new FlowPanel();
 	for (int i = 0; i < 9; i++) {
-	    Widget w = new HTML("<h1>" + i + "</h1>");
+	    Widget w = new HTML("<h2>" + i + "</h2>");
 	    w.setStyleName("border border-primary rounded gwt-width-10pc");
 	    p.add(w);
 	}
-	Widget w_a = new HTML("<h1>a</h1>");
+	Widget w_a = new HTML("<h2>a</h2>");
 	w_a.setStyleName("border border-primary rounded gwt-width-10pc");
 	p.insert(w_a, 8);
-	return p;
+	outer.add(p);
+	return outer;
     }
     
     public HorizontalPanel getHorizontalPanel() {
