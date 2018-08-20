@@ -17,14 +17,14 @@ public class CustomSplitLayoutPanel extends SplitLayoutPanel {
 	footer.setStyleName("gwt-round-border");
 	Widget navigation = new HTML("navigation");
 	navigation.setStyleName("gwt-round-border");
-	ScrollPanel detailsPanel = new ScrollPanel();
+	ScrollPanel detailsScrollPanel = new ScrollPanel();
 	Widget details = new HTML("<h1>Inside ScrollPanel</h1>" + messages.loreIpsum10k());
 	details.setStyleName("gwt-round-border");
-	detailsPanel.add(details);
+	detailsScrollPanel.add(details);
 
 	addNorth(header, 150);
 	addWest(navigation, 128);
 	addSouth(footer, 150);
-	add(detailsPanel);
+	add(detailsScrollPanel);
     }
 }
