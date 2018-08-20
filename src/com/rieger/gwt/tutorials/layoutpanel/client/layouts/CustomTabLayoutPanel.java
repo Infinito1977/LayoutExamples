@@ -27,7 +27,7 @@ public class CustomTabLayoutPanel extends DockLayoutPanel {
 	southPanel.add(new CustomDialogBoxPushButton());
 	DecoratorPanel decoratorPanel = new DecoratorPanel();
 	decoratorPanel.add(southPanel);
-	addSouth(decoratorPanel, 2.5);
+	addSouth(decoratorPanel, 2.7);
 
 	TabLayoutPanel p = new TabLayoutPanel(2.5, Unit.EM);
 
