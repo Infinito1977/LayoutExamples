@@ -2,6 +2,7 @@ package com.rieger.gwt.tutorials.layoutpanel.client.layouts;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.user.client.ui.DecoratorPanel;
 import com.google.gwt.user.client.ui.DockLayoutPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -18,12 +19,15 @@ public class CustomTabLayoutPanel extends DockLayoutPanel {
 	addNorth(northWidget, 4);
 
 	HorizontalPanel southPanel = new HorizontalPanel();
-	southPanel.add(new HTML("<h4>PopuPanel and DialogBox:</h2>"));
+	southPanel.setSpacing(10);
+	southPanel.add(new HTML("<h4>PopupPanel and DialogBox:</h2>"));
 	southPanel.add(new HTML("&nbsp;"));
 	southPanel.add(new CustomPopupPanelToggleButton());
 	southPanel.add(new HTML("&nbsp;"));
 	southPanel.add(new CustomDialogBoxPushButton());
-	addSouth(southPanel, 2.5);
+	DecoratorPanel decoratorPanel = new DecoratorPanel();
+	decoratorPanel.add(southPanel);
+	addSouth(decoratorPanel, 2.5);
 
 	TabLayoutPanel p = new TabLayoutPanel(2.5, Unit.EM);
 
