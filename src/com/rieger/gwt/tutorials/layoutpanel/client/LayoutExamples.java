@@ -109,7 +109,7 @@ public class LayoutExamples implements EntryPoint {
     
     public DockLayoutPanel getFlowPanel() {
 	DockLayoutPanel outer = new DockLayoutPanel(Unit.EM);
-	Widget north = new HTML("<h1>Elemente sind auf 10% Breite begrenzt, sonst füllen sie die komplette Spalte</h1>");
+	Widget north = new HTML("<h1>Elemente sind auf 10% Breite begrenzt, sonst fÃ¼llen sie die komplette Spalte</h1>");
 	outer.addNorth(north, 4);
 	FlowPanel p = new FlowPanel();
 	for (int i = 0; i < 9; i++) {
