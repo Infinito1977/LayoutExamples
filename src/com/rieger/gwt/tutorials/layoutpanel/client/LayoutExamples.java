@@ -24,29 +24,11 @@ import com.google.gwt.user.client.ui.StackLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomDockLayoutPanel;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomFlexTable;
 import com.rieger.gwt.tutorials.layoutpanel.client.layouts.CustomLayout;
 
 public class LayoutExamples implements EntryPoint {
-    public DockLayoutPanel getDockLayoutPanel() {
-	DockLayoutPanel p = new DockLayoutPanel(Unit.EM);
-	Widget header = new HTML("header");
-	header.setStyleName("border border-primary rounded gwt-border-2px");
-	Widget footer = new HTML("footer");
-	footer.setStyleName("border border-primary rounded gwt-border-2px");
-	Widget navigation = new HTML("navigation");
-	navigation.setStyleName("border border-primary rounded gwt-border-2px");
-	Widget details = new HTML("<h1>Layout with Bootstrap</h1>");
-	details.setStyleName("border border-primary rounded gwt-border-2px");
-
-	p.addNorth(header, 2);
-	p.addSouth(footer, 2);
-	p.addWest(navigation, 10);
-	p.add(details);
-
-	return p;
-    }
-
     public LayoutPanel getLayoutPanel() {
 	Widget leftPanel = new HTML("Left Panel"), rightPanel = new HTML("Right Panel"),
 		centerPanel = new HTML("<h1>Center Panel</h1>");
@@ -191,9 +173,9 @@ public class LayoutExamples implements EntryPoint {
 	deckPanel.setStyleName("deckpanel");
 
 	// Create lables to add to deckpanel
-	Label label1 = new Label("This is first Page");
-	Label label2 = new Label("This is second Page");
-	Label label3 = new Label("This is third Page");
+	Label label1 = new HTML("<h1>This is first Page</h1>");
+	Label label2 = new HTML("<h1>This is second Page</h1>");
+	Label label3 = new HTML("<h1>This is third Page</h1>");
 
 	// Add labels to deckpanel
 	deckPanel.add(label1);
@@ -250,7 +232,7 @@ public class LayoutExamples implements EntryPoint {
 
 	TabLayoutPanel p = new TabLayoutPanel(2.5, Unit.EM);
 
-	p.add(getDockLayoutPanel(), "DockLayoutPanel");
+	p.add(new CustomDockLayoutPanel(Unit.EM), "DockLayoutPanel");
 	p.add(getLayoutPanel(), "LayoutPanel");
 	p.add(getSplitLayoutPanel(), "SplitLayoutPanel");
 	p.add(getStackLayoutPanel(), "StackLayoutPanel");
