@@ -13,7 +13,7 @@ public class CustomFlexTable extends FlexTable {
     public CustomFlexTable() {
 	FlexCellFormatter cellFormatter = getFlexCellFormatter();
 	addStyleName("flexTable");
-	setWidth("32em");
+	setWidth("50em");
 	setCellSpacing(5);
 	setCellPadding(3);
 
