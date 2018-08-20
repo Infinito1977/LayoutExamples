@@ -117,6 +117,7 @@ public class LayoutExamples implements EntryPoint {
 	    w.setStyleName("border border-primary rounded gwt-width-10pc");
 	    p.add(w);
 	}
+	// Fügt vor 9. Element folgendes Element hinzu
 	Widget w_a = new HTML("<h2>a</h2>");
 	w_a.setStyleName("border border-primary rounded gwt-width-10pc");
 	p.insert(w_a, 8);
@@ -127,11 +128,12 @@ public class LayoutExamples implements EntryPoint {
     public HorizontalPanel getHorizontalPanel() {
 	HorizontalPanel p = new HorizontalPanel();
 	for (int i = 0; i < 9; i++) {
-	    Widget w = new HTML("<h1>" + i + "</h1>");
+	    Widget w = new HTML("<h2>" + i + "</h2>");
 	    w.setStyleName("border border-primary rounded");
 	    p.add(w);
 	}
-	Widget w_a = new HTML("<h1>a</h1>");
+	// Fügt vor 9. Element folgendes Element hinzu
+	Widget w_a = new HTML("<h2>a</h2>");
 	w_a.setStyleName("border border-primary rounded");
 	p.insert(w_a, 8);
 	return p;
