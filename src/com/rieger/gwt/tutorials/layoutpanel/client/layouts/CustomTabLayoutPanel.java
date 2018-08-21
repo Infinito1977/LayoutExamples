@@ -36,8 +36,8 @@ public class CustomTabLayoutPanel extends DockLayoutPanel {
 	p.add(new CustomSplitLayoutPanel(), "SplitLayoutPanel");
 	p.add(new CustomStackLayoutPanel(Unit.EM), "StackLayoutPanel");
 	p.add(new CustomFlowPanel(), "FlowPanel");
-	p.add(new CustomHorizontalPanel(), "HorizontalPanel");
-	p.add(new CustomVerticalPanel(), "VerticalPanel");
+	p.add(new CustomHorizontalPanel(), "HorizontalPanel (d)");
+	p.add(new CustomVerticalPanel(), "VerticalPanel (d)");
 	p.add(new CustomFlexTable(), "FlexTable");
 	p.add(new CustomGrid(), "Grid inside DecoratorPanel");
 	p.add(new CustomDeckPanel(), "DeckPanel inside VerticalPanel");
