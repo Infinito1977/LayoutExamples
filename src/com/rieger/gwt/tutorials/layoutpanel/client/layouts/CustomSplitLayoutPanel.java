@@ -9,7 +9,7 @@ import com.rieger.gwt.tutorials.layoutpanel.client.i8n.CustomMessages;
 
 public class CustomSplitLayoutPanel extends SplitLayoutPanel {
     private CustomMessages messages = GWT.create(CustomMessages.class);
-    
+
     public CustomSplitLayoutPanel() {
 	Widget header = new HTML("header");
 	header.setStyleName("gwt-round-border");
